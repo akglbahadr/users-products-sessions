@@ -5,7 +5,9 @@ import logger from './utils/logger'
 import routes from './routes'
 
 const PORT = config.get<number>('port')
-const app = express()
+const app = express();
+
+app.use(express.json());
 
 app.listen(PORT, async() => {
     logger.info(`Server is up and running on port ${PORT}`)
